@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SDRWebsite.Models.PropertyListData>
+
+@{
+    ViewBag.Title = "Property Page";
+}
+
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
+
+<div class="row">
+    <div class="thumb-list">
+
+
+        <a href="#" onclick="toggle_visibility('foo');" class="mapicon">Click here to Map vie</a>
+        <div id="foo"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=canada&amp;aq=&amp;sll=22.557579,88.368828&amp;sspn=0.834491,1.674042&amp;ie=UTF8&amp;hq=&amp;hnear=Canada&amp;ll=56.130366,-106.346771&amp;spn=67.03615,214.277344&amp;t=m&amp;z=3&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=canada&amp;aq=&amp;sll=22.557579,88.368828&amp;sspn=0.834491,1.674042&amp;ie=UTF8&amp;hq=&amp;hnear=Canada&amp;ll=56.130366,-106.346771&amp;spn=67.03615,214.277344&amp;t=m&amp;z=3" style="color:#0000FF;text-align:left">View Larger Map</a></small></div>
+
+
+
+
+
+
+        <h1>Property listing</h1>
+
+
+        <ul>
+            @foreach (var item in Model) {
+            <li>
+                <div class="listblock">
+                    <div class="span7">
+
+                        <h3><a href="availablerentals1.php">@Html.DisplayFor(modelItem => item.Name)</a></h3>
+                        <p>@Html.DisplayFor(modelItem => item.Address1) @Html.DisplayFor(modelItem => item.Address2) @Html.DisplayFor(modelItem => item.City)
+                         @Html.DisplayFor(modelItem => item.State) @Html.DisplayFor(modelItem => item.PostalCode)
+                        </p>
+                        <p>
+                            <span class="listing-beds">@Html.DisplayFor(modelItem => item.Beds) Bed,</span>
+                            <span class="listing-baths">@Html.DisplayFor(modelItem => item.Baths) Bath</span>
+                            <span class="listing-sqft">@Html.DisplayFor(modelItem => item.SqFt) Sq Ft</span>
+                            <span class="listing-sqft">$@Html.DisplayFor(modelItem => item.Price)</span>
+                        </p>
+
+
+                    </div>
+                    <div class="span2"><a href="availablerentals1.php"><img src="img/thumb-small02.png" alt="Thumbnail"></a></div>
+
+                    <div class="span2 "> <a href="availablerentals1.php"><img src="img/122.l01.gif" width="120" height="80" alt="superduper"></a></div>
+                    <div class="cl"></div>
+                </div>
+            </li>
+            }
+        </ul>
+
+
+
+
+
+
+    </div>
+
+</div>

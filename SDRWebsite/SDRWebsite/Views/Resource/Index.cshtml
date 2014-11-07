@@ -1,0 +1,40 @@
+﻿@model SDRWebsite.Models.ResourceList
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="fullwidth thumb-list">
+
+        <div class=" divdeco1 tenants fl">
+            <div class="is-padded linkdeco ">
+
+                <h2>For tenants</h2>
+
+                <ul>
+                    @foreach (var item in Model.TenantFiles)
+                    {
+                        <li><a href="#">@Html.DisplayFor(modelItem => item.Name)</a></li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+        <div class=" divdeco1 owners fr" style="margin-right:0px;">
+            <div class="is-padded linkdeco">
+                <h2>For owners</h2>
+                <ul>
+                    @foreach (var item in Model.OwnerFiles)
+                    {
+                        <li><a href="#">@Html.DisplayFor(modelItem => item.Name)</a></li>
+                    }
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="cl"></div>
+
+    </div>
+</div>
