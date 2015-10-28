@@ -68,6 +68,7 @@ namespace SDRWebsite.Controllers
                     if (response.IsSuccessStatusCode)
                     {
                         //Uri gizmoUrl = response.Headers.Location;
+                        
                     }
                 }
 
